@@ -1,3 +1,10 @@
+/**
+ * Taylor Lee, Luke Allevato, Aaron Aryan
+ * Doug Lundin
+ * CSC245-380 Project 2
+ * 20220212
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -26,6 +33,8 @@ public class CSC245_Project2 {
             System.out.println("Email Addresses:");
             // Read one Line using BufferedReader
             while ((fileLine = inputStream.readLine()) != null) {
+                // 20220323 tml: Identified security vulnerability: Sanitize untrusted data included in regular expression (IDS08-j)
+                // 20220323 tml: Identified security vulnerabilities (IDS08-j), Sanitize Untrusted data included in regular expression, in following code have been mitigated
                 // 20220212 tml: Identified security vulnerability: Properly encode or escape output (IDS51-J)
                 // 20220214 tml: Identified security vulnerability (IDS51-J) in following code has been mitigated
                 if (fileLine.matches("^[A-Za-z0-9+.-]+@[A-Za-z0-9+.-](.+)$")) {
